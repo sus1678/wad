@@ -1,0 +1,50 @@
+<html>    
+<head>   
+<title>Flex Box </title>      
+<style>        
+    body  
+    {          
+        background-color: aqua; 
+        display: flex;          
+        flex-direction: row;   
+        align-items: center;          
+        justify-content: center;        
+    }        
+    .card {          
+        background-color: cornsilk; 
+        height: 425px;          
+        width: 350px;          
+        border: 4px solid black;        
+    }        
+   .order {         
+        display: flex;          
+        align-items: center;          
+        justify-content: space-around;        
+   }      
+</style>    
+</head>    
+<body>      
+<!-- <h3>        
+            The FlexBox was ….. 
+</h3> -->   
+<div class="card">        
+<img src="D:\burger.jpg" alt="burger" height="40%" width="100%" />        
+<h2>Burger-King</h2>        
+<p>          
+Pizza burgers … 
+</p>        
+<div class="order">          
+<h3>$2.45</h3>          
+<button class="button">Order Now</button>        
+</div>      
+</div>      
+<script>        
+const btn = document.querySelector(".button");        
+const box = document.querySelector(".order");   
+btn.addEventListener("click", function () 
+{         
+box.innerHTML = "";          
+box.insertAdjacentHTML("afterbegin", "<h2>Ordered</h2>");   
+});      
+</script>       </body>     </html> 
+
