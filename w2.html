@@ -1,0 +1,67 @@
+<html>    
+<head>      
+<title>Experimant 2a</title>    
+</head>    
+<body>      
+    <h2>Sum of n numbers</h2>   
+    <input type="number" placeholder="number" class="num" />      
+    <button class="button">Sum up</button>   
+<script>        
+const btn = document.querySelector(".button");        
+btn.addEventListener("mouseover", function ()  
+    {          
+        const enteredNumber = document.querySelector(".num").value;   
+        let sum = 0;   
+        for (let i = 1; i <= enteredNumber; i++)  
+        {            
+            sum = sum + i;          
+        }   
+        alert("sum is :" + sum);        
+   });      
+</script>    
+</body>  
+</html> 
+ 
+2b)  
+<html>    
+<head>   
+<title> Quadratic Equation </title>  
+</head>    
+<body>      
+    <input type="number" placeholder="co efficient of a" class="a" /> <br> 
+    <input type="number" placeholder="co efficient of b" class="b" /> <br> 
+    <input type="number" placeholder="co efficient of c" class="c" />  <br> 
+    <button class="button">Get roots</button>   
+<script>        
+    const btn = document.querySelector(".button");   
+    btn.addEventListener("click", function ()  
+    {          
+        const a = Number(document.querySelector(".a").value);          
+        const b = Number(document.querySelector(".b").value);          
+        const c = Number(document.querySelector(".c").value);   
+        let real1, real2, imag1, imag2;  
+        const rootof = b * b - 4 * a * c;         // negative          
+        if (rootof < 0)  
+        {            
+            real1 = -b / (2 * a);            
+Prepared by: Ahmed 
+            real2 = -b / (2 * a);   
+            imag1 = Math.sqrt(rootof * -1) / (2 * a) + "i";         
+            imag2 = Math.sqrt(rootof * -1) / (2 * a) + "i";         
+        }   
+        // positive          
+        if (rootof > 0)  
+        {            
+            real1 = (-b + Math.sqrt(rootof)) / (2 * a);  
+            real2 = (-b - Math.sqrt(rootof)) / (2 * a);             
+            imag1 = 0 + "i";            
+            imag2 = 0 + "i";          
+        }   
+        document.write("Root1 : ", real1, "+", imag1);          
+        document.write("Root2 : ", real2, "-", imag2);        
+        });      
+        </script>    
+     </body>  
+  </html>  
+   
+ 
