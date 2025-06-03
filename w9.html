@@ -1,0 +1,30 @@
+<html lang="en"> 
+<head> 
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>Last Visit</title> 
+<style> 
+body { 
+background-color: #87ceeb; 
+text-align: center; 
+font-family: Arial, sans-serif; 
+} 
+</style> 
+</head> 
+<body> 
+<h2>Last visited time on the web page</h2> 
+<br> 
+<?php 
+$inTwoMonths = time() + 60 * 60 * 24 * 60; 
+setcookie('lastVisit', date("G:i - m/d/y"), $inTwoMonths); 
+ 
+if (isset($_COOKIE['lastVisit'])) { 
+$visit = $_COOKIE['lastVisit']; 
+echo "Your last visit was - " . htmlspecialchars($visit); 
+} else { 
+echo "You've got some stale cookies!"; 
+        } 
+      ?> 
+</body> 
+</html> 
+ 
