@@ -1,0 +1,62 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+<meta charset="UTF-8"> 
+<meta http-equiv="X-UA-compatible" content="IE=edge"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>Weather Forecast</title> 
+<style> 
+body { 
+ background-color: slategray; /* corrected syntax */ 
+ display: flex; 
+ justify-content: center; 
+ align-items: center; 
+ color: rgb(27, 214, 83); 
+} 
+.container { 
+ border: 2px solid black; 
+ padding: 20px; 
+ text-align: center; 
+} 
+</style> 
+</head> 
+<body> 
+ <div class="container"> 
+ <h1>Weather Forecast</h1> 
+ <div> 
+  <input type="text" placeholder="Enter the City name" 
+oninput="getWeatherInfo(this.value)"> 
+ </div> 
+ <div class="details">Enter the city name to get the weather Forecast </div> 
+ </div> 
+<script> 
+  const detailsDiv = document.querySelector('.details'); // corrected selector 
+  const APIkey = '3becb1759da057bd3b63a18a7d85d605'; 
+  async function getWeatherInfo(cityName) { 
+   const url = 
+`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${APIkey}`; // corrected 
+URL string 
+   const info = await fetch(url) 
+                            .then(response => { 
+                                if(response.ok) { 
+                                    return response.json(); 
+                                } 
+                                return null; 
+                            }); // corrected promise syntax 
+   let str = ""; 
+   if (info == null) {
+ str = 'City not found'; 
+            } else { 
+Prepared by: Ahmed 
+                str = `Name: ${cityName}<br> 
+                Temp: ${info.main.temp} <br> 
+                Min Temp: ${info.main.temp_min}<br> 
+                Max Temp: ${info.main.temp_max}<br> 
+                Pressure: ${info.main.pressure}<br> 
+                Humidity: ${info.main.humidity}`; 
+            } 
+            detailsDiv.innerHTML = str; 
+  } 
+</script> 
+</body> 
+</html> 
