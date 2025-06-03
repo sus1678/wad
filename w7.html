@@ -1,0 +1,79 @@
+ 
+<html>    
+<head>   
+<title>Grid </title>      
+<style>        
+.item {          
+background-color:plum;        
+}        
+.container {          
+display: grid;  
+background-color: blue; 
+grid-template-columns: 1fr 1fr 1fr 200px;          
+grid-template-rows: 50px 100px 200px 50px;          
+grid-template-areas:           
+"header header header header"            
+"smallBox1 smallBox2 smallBox3 sidebar"            
+"mainContent mainContent mainContent sidebar"            
+"footer footer footer footer";   
+gap: 16px;        
+}        
+.header {          
+grid-area: header;  
+padding: 20px; 
+font-size: 30px; 
+   text-align: center       
+  }        
+.smallBox1 {          
+gap:20px; 
+grid-area: smallBox1;  
+padding: 30px; 
+font-size: 30px; 
+text-align: center        
+}        
+.smallBox2 {          
+grid-area: smallBox2;        
+padding: 40px; 
+font-size: 30px; 
+text-align: Top   
+  }       
+.smallBox3 {          
+grid-area: smallBox3;        
+padding: 50px; 
+font-size: 30px; 
+   text-align: right   
+  }        
+.sidebar {  
+grid-area: sidebar;      
+padding: 20px; 
+font-size: 30px; 
+text-align: center     
+Prepared by: Ahmed 
+  }        
+.mainContent {          
+grid-area: mainContent;   
+padding: 20px; 
+font-size: 30px; 
+text-align: center        
+  }       
+.footer {          
+grid-area: footer;   
+padding: 20px; 
+font-size: 30px; 
+text-align: center        
+}      
+</style>    
+</head>    
+<body>      
+<div class="container">        
+<div class="header item"> Header</div>        
+<div class="smallBox1 item"> Small box 1</div>        
+<div class="smallBox2 item"> Small box 2</div>        
+<div class="smallBox3 item"> Small box 3</div>        
+<div class="sidebar item"> Sidebar</div>        
+<div class="mainContent item"> Main content</div>        
+   <div class="footer item"> Footer</div>      
+</div>    
+</body>  
+</html> 
+ 
