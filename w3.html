@@ -1,0 +1,25 @@
+<html>    
+<head>    
+<title>Push, Pop, Filter Operation</title>  
+</head>    
+<body>      
+<p> Analyze different array and object operations available in JavaScript and       
+perform the following operations: <br />  a) Create … <br /> b) Use 'push' operation ….      <br 
+/> c) Use 'pop' operation … <br />  d) Use 'filter' operation …..</p>      
+<script>        
+const todoList = [];        
+todoList.push({ id: "a" });        
+todoList.push({ id: "b" });        
+todoList.push({ id: "c" });        
+todoList.push({ id: "d" });        
+todoList.push({ id: "e" });        
+console.log(todoList);   
+const poppedItem = todoList.pop();        
+console.log(poppedItem);   
+const filteredTodoList = todoList.filter(function (item)  
+{          
+return item.id !== "a";       });        
+console.log(filteredTodoList);  
+</script>
+</body>
+</html>
